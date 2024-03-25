@@ -25,8 +25,6 @@ function submitForm(event) {
     return;
   }
 
-  loader.classList.remove('is-open');
-
   searchImages(userInput)
     .then(images => renderGallery(images))
     .catch(error => {
@@ -37,6 +35,7 @@ function submitForm(event) {
       });
     })
     .finally(() => {
+      loader.classList.remove('is-open');
       event.target.reset();
     });
 }

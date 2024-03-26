@@ -6,11 +6,14 @@ import { renderGallery } from './js/render-functions.js';
 
 const form = document.querySelector('.form');
 const loader = document.querySelector('.loader');
+const gallery = document.querySelector('.gallery');
 
 form.addEventListener('submit', submitForm);
 
 function submitForm(event) {
   event.preventDefault();
+
+  gallery.innerHTML = '';
   loader.classList.add('is-open');
 
   const userInput = event.target.search.value.trim();
